@@ -8,7 +8,7 @@ function Login({reload,setReload}) {
     const [users, setUsers] = useState([])
     const navigate = useNavigate()
     useEffect (() => {
-        fetch('http://localhost:3000/users')
+        fetch('https://todo-nodejs-one.vercel.app/users')
             .then(res => res.json())
             .then(data => setUsers(data))
     },[])
@@ -16,7 +16,7 @@ function Login({reload,setReload}) {
     const handleSignIn = () => {
         const username = document.querySelector('.txtusername')
         const password = document.querySelector('.txtpassword')
-                fetch(`http://localhost:3000/users/account/?username=${username.value}&password=${password.value}`)
+                fetch(`https://todo-nodejs-one.vercel.app/users/account/?username=${username.value}&password=${password.value}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data!= null) {
@@ -42,7 +42,7 @@ function Login({reload,setReload}) {
     return ( 
         <div className='col-lg-12 login'>
             <h2>Login</h2><br></br>
-            <form method="POST" action="http://localhost:3000/users/insert"className='col-lg-4'>
+            <form method="POST" action="https://todo-nodejs-one.vercel.app/users/insert"className='col-lg-4'>
                 <div class="form-outline mb-4">
                     <label class="form-label username" for="form2Example1">Username</label>
                     <input  name='userName' type="text" id="form2Example1" class="form-control txtusername" />
