@@ -11,7 +11,7 @@ function Content() {
     const [isImportant, setIsImportant] = useState(false)
     let numberOfComplete = 0
     useEffect (() => {
-        fetch('http://localhost:3000/api')
+        fetch('https://todo-nodejs-one.vercel.app/api')
             .then(res => res.json())
             .then(data => setTasks(data))
     },[])
@@ -55,7 +55,7 @@ function Content() {
                 </div>
 
                 {/* INSERT TASK */}
-                <form action='http://localhost:3000/insert' method='POST' className='add-task-area col-lg-12'>
+                <form action='https://todo-nodejs-one.vercel.app/insert' method='POST' className='add-task-area col-lg-12'>
                     
                     {/* isComplete */}
                     <input type='hidden' value={false} name='isComplete' />
@@ -106,7 +106,7 @@ function Content() {
             </div>
 
             {/* Update */}
-            <form method='POST' action='http://localhost:3000/update' className='form-detail-task col-lg-4'>
+            <form method='POST' action='https://todo-nodejs-one.vercel.app/update' className='form-detail-task col-lg-4'>
                 <div className='title col-lg-10'>
                     {/* isComplete */}
                     <input type='hidden' className='isCompleteHidden' name='isComplete' value={isComplete} />
@@ -149,7 +149,7 @@ function Content() {
                     <button type="submit" class="btn btn-primary" value={job._id}>Update</button>
                     
                     {/* Delete */}
-                    <form method='POST' action='http://localhost:3000/delete'>
+                    <form method='POST' action='https://todo-nodejs-one.vercel.app/delete'>
                         <input type='hidden' value={job._id} name='_id' />
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
